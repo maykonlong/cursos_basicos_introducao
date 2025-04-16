@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de APIs - REST e SOAP</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fa;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #007bff, #6f42c1);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        section {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        section h2 {
+            color: #007bff;
+            margin-top: 0;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 0.5rem;
+        }
+
+        .emoji-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        code, pre {
+            background: #eef0f3;
+            padding: 1rem;
+            display: block;
+            overflow-x: auto;
+            border-left: 4px solid #007bff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            list-style-type: square;
+        }
+
+        .question-box {
+            background: #fff3cd;
+            padding: 1.5rem;
+            border-left: 5px solid #ffc107;
+            margin-top: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #e9ecef;
+            font-size: 0.9rem;
+            color: #555;
+            border-top: 1px solid #ddd;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1> Guia de APIs: REST e SOAP</h1>
+    </header>
+    <div class="container">
+        <section>
+            <div class="emoji-title"> 1. O que é uma API?</div>
+            <p><strong>Conceito:</strong> Uma API (Application Programming Interface) é um conjunto de regras que permite que dois sistemas diferentes se comuniquem.</p>
+            <p>É como um garçom: você faz um pedido, ele leva até a cozinha (o servidor), e depois te traz a resposta.</p>
+            <p><strong>Ex:</strong> Um aplicativo de delivery usa APIs para buscar restaurantes, cardápios e enviar seu pedido.</p>
+        </section>
+        <section>
+            <div class="emoji-title"> 2. O que é REST?</div>
+            <p><strong>REST (REpresentational State Transfer):</strong></p>
+            <ul>
+                <li>Usa o protocolo HTTP</li>
+                <li>Retorna dados em formato JSON</li>
+                <li>URLs organizadas por recursos (ex: <code>/users</code>, <code>/posts</code>)</li>
+                <li>Usa verbos HTTP:
+                    <ul>
+                        <li><strong>GET</strong> (buscar)</li>
+                        <li><strong>POST</strong> (criar)</li>
+                        <li><strong>PUT</strong> (atualizar)</li>
+                        <li><strong>DELETE</strong> (remover)</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><strong> Exemplo de REST:</strong></p>
+            <code>GET https://jsonplaceholder.typicode.com/users/1</code>
+            <p>➡ Retorna os dados do usuário 1.</p>
+            <h3> Exercício REST #1 – Buscar usuário</h3>
+            <ul>
+                <li>Abra o Postman</li>
+                <li>Crie nova requisição <strong>GET</strong></li>
+                <li>URL: <code>https://jsonplaceholder.typicode.com/users/1</code></li>
+                <li>Clique em <strong>Send</strong></li>
+                <li>Veja os dados retornados</li>
+                <li><strong>Teste com outros IDs:</strong> 2, 3, 10...</li>
+            </ul>
+            <h3> Exercício REST #2 – Criar novo post</h3>
+            <ul>
+                <li>Método: <strong>POST</strong></li>
+                <li>URL: <code>https://jsonplaceholder.typicode.com/posts</code></li>
+                <li>Vá em <strong>Body > raw > JSON</strong></li>
+                <li>Envie o conteúdo:</li>
+            </ul>
+            <pre>{
+    "title": "Primeiro Post",
+    "body": "Testando Postman!",
+    "userId": 1
+}</pre>
+            <p>Clique em <strong>Send</strong> e veja o ID retornado.</p>
+        </section>
+        <section>
+            <div class="emoji-title"> 3. O que é SOAP?</div>
+            <p><strong>SOAP (Simple Object Access Protocol)</strong></p>
+            <ul>
+                <li>Baseado em XML</li>
+                <li>Mensagens com formato fixo</li>
+                <li>Requer WSDL para comunicação</li>
+                <li>Mais estruturado e formal</li>
+            </ul>
+            <p><strong> Exemplo de requisição SOAP:</strong></p>
+            <pre>&lt;soap:Envelope&gt;
+    &lt;soap:Body&gt;
+        &lt;NumberToWords&gt;
+            &lt;ubiNum&gt;123&lt;/ubiNum&gt;
+        &lt;/NumberToWords&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</pre>
+            <h3> Exercício SOAP #1 – Converter número para texto</h3>
+            <ul>
+                <li>Método: <strong>POST</strong></li>
+                <li>URL: <code>https://www.dataaccess.com/webservicesserver/NumberConversion.wso</code></li>
+                <li>Headers:
+                    <ul>
+                        <li><code>Content-Type: text/xml; charset=utf-8</code></li>
+                        <li><code>SOAPAction: http://www.dataaccess.com/webservicesserver/NumberToWords</code></li>
+                    </ul>
+                </li>
+                <li>Body > raw > XML:</li>
+            </ul>
+            <pre>&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+    &lt;soap:Body&gt;
+        &lt;NumberToWords xmlns="http://www.dataaccess.com/webservicesserver/"&gt;
+            &lt;ubiNum&gt;123&lt;/ubiNum&gt;
+        &lt;/NumberToWords&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</pre>
+            <p><strong>Teste com:</strong> 300, 45, 1000...</p>
+        </section>
+        <section class="question-box">
+            <h3> Fixação: Questões para pensar</h3>
+            <ul>
+                <li>Qual a principal diferença entre REST e SOAP?</li>
+                <li>Em qual formato REST geralmente retorna os dados?</li>
+                <li>O que é um WSDL?</li>
+                <li>Quais métodos REST você testou no Postman?</li>
+            </ul>
+        </section>
+        <section>
+            <h2> Desafio final (Mini Prova)</h2>
+            <h3>Parte 1 – REST:</h3>
+            <ul>
+                <li>Busque os dados do usuário <code>/users/4</code></li>
+                <li>Crie um post com esse <code>userId</code></li>
+                <li>Atualize o post</li>
+                <li>Delete o post criado</li>
+            </ul>
+            <h3>Parte 2 – SOAP:</h3>
+            <p>Faça uma requisição para converter um número à sua escolha em texto.</p>
+        </section>
+    </div>
+    <footer>
+        Criado por Maykon | Guia interativo para APIs REST & SOAP
+    </footer>
+</body>
+</html>

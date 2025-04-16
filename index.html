@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Portal de Cursos Internos • C&M Software</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #F4F4F4;
+      color: #003865;
+    }
+
+    header {
+      background-color: #003865;
+      color: #fff;
+      padding: 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.1em;
+      color: #F39200;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .link {
+      background-color: #fff;
+      border-left: 6px solid #F39200;
+      padding: 20px;
+      text-decoration: none;
+      color: #003865;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .link h2 {
+      margin: 0 0 10px;
+      font-size: 1.2em;
+      color: #0078D7;
+    }
+
+    .link p {
+      margin: 0;
+      font-size: 0.95em;
+      color: #333;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portal de Cursos Internos</h1>
+    <p>C&M Software • Capacitação e Aprendizado</p>
+  </header>
+
+  <div class="container">
+    <div class="grid" id="links-container">
+      <!-- Links dos cursos serão inseridos aqui -->
+    </div>
+  </div>
+
+  <footer>
+    © 2025 C&M Software - Todos os direitos reservados.
+  </footer>
+
+  <script>
+    const cursos = [
+      { nome: "Linux_Curso_Básico", descricao: "Curso com comandos e exercicios básicos" },
+      { nome: "Introdução ao SPI", descricao: "Noções Básicas do SPI" },
+      { nome: "API", descricao: "Conceitos básicos de API" }
+    ];
+
+    const container = document.getElementById('links-container');
+
+    cursos.forEach(curso => {
+      const link = document.createElement('a');
+      link.href = `${curso.nome.replace(/\s+/g, '').toLowerCase()}.html`;
+      link.className = 'link';
+
+      link.innerHTML = `
+        <h2>${curso.nome}</h2>
+        <p>${curso.descricao}</p>
+      `;
+
+      container.appendChild(link);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guia Prático para Iniciantes no Linux</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #212529;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 2rem;
+      border-bottom: 2px solid #2c3e50;
+      padding-bottom: 0.2rem;
+    }
+    .emoji {
+      font-size: 1.5rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.4rem;
+    }
+    .highlight {
+      background-color: #e9ecef;
+      border-left: 4px solid #17a2b8;
+      padding: 0.8rem 1rem;
+      margin: 1rem 0;
+      border-radius: 6px;
+    }
+    code {
+      background-color: #e1e1e1;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    .task {
+      background-color: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 0.8rem 1rem;
+      margin: 1rem 0;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 Guia Prático para Iniciantes no Linux</h1>
+
+  <h2 class="emoji">🧠 O que é o Linux?</h2>
+  <p>O Linux é um sistema operacional de código aberto baseado no Unix. Ele atua como uma ponte entre o hardware (parte física do computador) e os programas que você executa. É utilizado em servidores, supercomputadores, celulares Android, roteadores, carros e muito mais.</p>
+  <p><strong>💡 Diferente do Windows ou macOS</strong>, o Linux oferece liberdade total para você modificar, personalizar e redistribuir.</p>
+
+  <h2 class="emoji">🎯 Para que serve o Linux?</h2>
+  <ul>
+    <li>Hospedar servidores de sites e aplicações.</li>
+    <li>Rodar sistemas embarcados (como TVs inteligentes, roteadores, caixas eletrônicos).</li>
+    <li>Automatizar tarefas e administrar redes.</li>
+    <li>Desenvolver softwares, jogos, aplicações web, scripts, entre outros.</li>
+    <li>Aprender programação, segurança e infraestrutura.</li>
+  </ul>
+
+  <h2 class="emoji">💪 Vantagens do Linux</h2>
+  <ul>
+    <li><strong>🔒 Segurança:</strong> Estrutura robusta de permissões e usuários.</li>
+    <li><strong>🛠️ Flexibilidade:</strong> Inúmeras distribuições para propósitos diversos (ex: Ubuntu, Debian, Arch, CentOS).</li>
+    <li><strong>🆓 Gratuito e Livre:</strong> Não há custo, e o código pode ser modificado.</li>
+    <li><strong>🧱 Estabilidade:</strong> Ideal para servidores com alta disponibilidade.</li>
+    <li><strong>🌍 Comunidade ativa:</strong> Soluções e ajuda disponíveis em fóruns, tutoriais e documentações.</li>
+  </ul>
+
+  <h2 class="emoji">🏁 Primeiros Passos no Terminal Linux</h2>
+
+  <h3>📁 1. Navegação no Sistema de Arquivos</h3>
+  <div class="highlight">
+    <p><strong>🧰 Comandos básicos:</strong></p>
+    <ul>
+      <li><code>cd /</code>: Vai para o diretório raiz.</li>
+      <li><code>cd ~</code>: Vai para seu diretório pessoal (home).</li>
+      <li><code>cd ..</code>: Sobe um nível.</li>
+      <li><code>cd -</code>: Volta ao diretório anterior.</li>
+      <li><code>pwd</code>: Mostra onde você está.</li>
+      <li><code>ls</code>: Lista arquivos e pastas.</li>
+    </ul>
+  </div>
+  <div class="task">
+    <strong>✅ Tarefas:</strong><br />
+    Navegue até o diretório raiz <code>/</code>.<br />
+    Volte para sua pasta pessoal com <code>cd ~</code>.<br />
+    Crie um caminho até <code>/tmp</code> usando <code>cd</code>.<br />
+    Use <code>ls -l</code> para listar arquivos com detalhes.<br />
+    Use <code>ls -a</code> para ver arquivos ocultos.
+  </div>
+
+  <h3>📄 2. Manipulação de Arquivos: Criar e Exibir</h3>
+  <div class="highlight">
+    <strong>🧰 Comandos:</strong>
+    <ul>
+      <li><code>mkdir pasta</code>: Cria diretório.</li>
+      <li><code>touch arquivo.txt</code>: Cria arquivo vazio.</li>
+      <li><code>echo "texto" > arquivo.txt</code>: Adiciona texto.</li>
+      <li><code>cat arquivo.txt</code>: Mostra conteúdo.</li>
+      <li><code>less arquivo.txt</code>: Visualiza página por página.</li>
+      <li><code>file nome</code>: Verifica tipo do arquivo.</li>
+    </ul>
+  </div>
+  <div class="task">
+    <strong>✅ Tarefas:</strong><br />
+    Crie uma pasta chamada <code>meu_projeto</code>.<br />
+    Dentro dela, crie <code>anotacoes.txt</code>.<br />
+    Adicione 3 linhas com <code>echo</code> ou <code>nano</code>.<br />
+    Use <code>cat</code>, <code>less</code> e <code>file</code>.<br />
+    Crie <code>arquivos</code> como subdiretório.
+  </div>
+
+  <h3>📝 3. Edição com vi ou vim</h3>
+  <div class="highlight">
+    <strong>🧰 Comandos no vi:</strong>
+    <ul>
+      <li><code>vi nome_arquivo</code>: Abre o editor.</li>
+      <li><code>i</code>: Modo inserção.</li>
+      <li><code>Esc</code>: Sai da inserção.</li>
+      <li><code>:w</code>: Salva.</li>
+      <li><code>:q</code>: Sai.</li>
+      <li><code>:wq</code>: Salva e sai.</li>
+      <li><code>:q!</code>: Sai sem salvar.</li>
+    </ul>
+  </div>
+  <div class="task">
+    <strong>✅ Tarefas:</strong><br />
+    Edite <code>anotacoes.txt</code> com <code>vi</code> e adicione seu nome.<br />
+    Adicione data/hora com <code>date >> anotacoes.txt</code>.<br />
+    Crie <code>resumo.txt</code> com 5 comandos Linux.<br />
+    Use <code>cat</code> para exibir.
+  </div>
+
+  <h3>📦 4. Copiar, Mover e Apagar Arquivos</h3>
+  <div class="highlight">
+    <strong>🧰 Comandos:</strong>
+    <ul>
+      <li><code>cp</code>: Copia.</li>
+      <li><code>mv</code>: Move/renomeia.</li>
+      <li><code>rm</code>: Remove arquivos.</li>
+      <li><code>rmdir</code>: Remove diretórios vazios.</li>
+      <li><code>rm -r</code>: Remove diretórios com arquivos.</li>
+    </ul>
+  </div>
+  <div class="task">
+    <strong>✅ Tarefas:</strong><br />
+    Crie <code>teste.txt</code> e copie para <code>backup/</code>.<br />
+    Renomeie para <code>teste_bkp.txt</code>.<br />
+    Mova para <code>arquivos</code>.<br />
+    Apague com <code>rm</code> e <code>rm -r</code>.
+  </div>
+
+  <h3>🔐 5. Permissões de Arquivos</h3>
+  <div class="highlight">
+    <strong>🧰 Comandos:</strong>
+    <ul>
+      <li><code>chmod</code>: Altera permissões.</li>
+      <li><code>ls -l</code>: Mostra permissões.</li>
+      <li><code>chmod 755 arquivo.sh</code>: rwx para dono, rx para outros.</li>
+      <li><code>chmod u+x</code>: Executável para o dono.</li>
+    </ul>
+  </div>
+  <div class="task">
+    <strong>✅ Tarefas:</strong><br />
+    Crie <code>meuscript.sh</code> com <code>echo "Olá"</code>.<br />
+    Dê permissão com <code>chmod +x</code>.<br />
+    Execute com <code>./meuscript.sh</code>.<br />
+    Remova leitura com <code>chmod u-r</code>.<br />
+    Restaure com <code>chmod 744</code>.
+  </div>
+
+  <h3>🌐 6. Comandos de Rede</h3>
+  <div class="highlight">
+    <strong>🧰 Comandos:</strong>
+    <ul>
+      <li><code>ping</code>: Testa conexão.</li>
+      <li><code>traceroute</code>: Caminho até destino.</li>
+      <li><code>curl</code>: Acessa URLs.</li>
+      <li><code>ifconfig</code> ou <code>ip a</code>: Interfaces de rede.</li>
+    </ul>
+  </div>
+  <div class="task">
+    <strong>✅ Tarefas:</strong><br />
+    Ping em <code>google.com</code>.<br />
+    Traceroute para <code>uol.com.br</code>.<br />
+    Use <code>curl ifconfig.me</code>.<br />
+    Veja <code>ip a</code>.
+  </div>
+
+  <h3>🗜️ 7. Arquivos Compactados</h3>
+  <div class="highlight">
+    <strong>🧰 Comandos:</strong>
+    <ul>
+      <li><code>gzip</code>, <code>gunzip</code>, <code>zcat</code></li>
+      <li><code>tar -czf</code> e <code>tar -xzf</code></li>
+    </ul>
+  </div>
+  <div class="task">
+    <strong>✅ Tarefas:</strong><br />
+    Crie <code>exemplo.txt</code> e compacte com <code>gzip</code>.<br />
+    Veja conteúdo com <code>zcat</code>.<br />
+    Compacte vários com <code>tar</code>.<br />
+    Extraia com <code>tar -xzf</code>.
+  </div>
+
+  <h3>📡 8. Escaneamento de Rede com nmap</h3>
+  <div class="highlight">
+    <strong>🧰 Comando:</strong>
+    <ul>
+      <li><code>nmap IP</code>: Escaneia portas.</li>
+      <li><code>nmap -sP 192.168.0.0/24</code>: Descobre dispositivos.</li>
+    </ul>
+  </div>
+  <div class="task">
+    <strong>✅ Tarefas:</strong><br />
+    Escaneie um IP local com <code>nmap</code>.<br />
+    Liste dispositivos da rede.<br />
+    Verifique portas abertas de um servidor.
+  </div>
+
+  <h2 class="emoji">🧪 Prova Prática Final (Desafio Completo)</h2>
+  <ul>
+    <li>Crie a pasta <code>projeto_final</code>, entre nela.</li>
+    <li>Crie <code>relatorio.txt</code>, edite com <code>vim</code> e adicione 5 comandos.</li>
+    <li>Dê permissão de execução ao arquivo.</li>
+    <li>Copie para <code>/tmp/relatorio_final.txt</code> e apague o original.</li>
+    <li>Teste conexão com <code>ping</code> e <code>traceroute</code>.</li>
+    <li>Compacte o relatório e veja com <code>zcat</code>.</li>
+    <li>Escaneie a rede local com <code>nmap</code>.</li>
+  </ul>
+
+</body>
+</html>
