@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila C&M Software - Plataformas Financeiras</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --warning: #f39c12;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            font-weight: 300;
+            margin-top: 0.5rem;
+        }
+        
+        .platform-section {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .platform-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .platform-header {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+        }
+        
+        .platform-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+        
+        .platform-title {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        
+        .platform-content {
+            padding: 1.5rem;
+        }
+        
+        .what-is {
+            background-color: var(--light);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .module {
+            margin-bottom: 1.5rem;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            padding: 1rem;
+        }
+        
+        .module-title {
+            color: var(--primary);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .module-icon {
+            margin-right: 0.5rem;
+        }
+        
+        .features {
+            margin-left: 1.5rem;
+        }
+        
+        .features li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .features li:before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .examples {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            border-left: 4px solid var(--warning);
+        }
+        
+        .examples-title {
+            font-weight: bold;
+            color: var(--dark);
+            margin-top: 0;
+        }
+        
+        .questions {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-top: 1.5rem;
+        }
+        
+        .questions-title {
+            color: var(--accent);
+            margin-top: 0;
+        }
+        
+        .questions ol {
+            counter-reset: question-counter;
+            padding-left: 0;
+        }
+        
+        .questions li {
+            counter-increment: question-counter;
+            margin-bottom: 1rem;
+            list-style: none;
+            position: relative;
+            padding-left: 2.5rem;
+        }
+        
+        .questions li:before {
+            content: counter(question-counter) ".";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1rem;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ddd, transparent);
+            margin: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .platform-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .platform-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Informações básicas</h1>
+        <p class="subtitle">Resumo de Produtos</p>
+    </header>
+    
+    <section class="platform-section">
+        <div class="platform-header">
+            <div class="platform-icon">✨</div>
+            <h2 class="platform-title">Rocket</h2>
+        </div>
+        
+        <div class="platform-content">
+            <div class="what-is">
+                <h3>▶ O que é:</h3>
+                <p>O Rocket é a plataforma de automação inteligente de processos financeiros da C&M Software. Ele é ideal para empresas que precisam automatizar fluxos complexos, reduzir erros humanos e garantir eficiência em operações de grande escala.</p>
+                <p>Dentro da plataforma Rocket, temos dois grandes módulos:</p>
+            </div>
+            
+            <div class="module">
+                <h4 class="module-title"><span class="module-icon">🔹</span> RPA - Robotic Process Automation</h4>
+                <p>Automatiza tarefas manuais e repetitivas como envio de arquivos, consultas a APIs, leitura e preenchimento de sistemas.</p>
+                
+                <h5>Funcionalidades:</h5>
+                <ul class="features">
+                    <li>Automação de processos sem intervenção humana.</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <h4 class="module-title"><span class="module-icon">🔹</span> Análise de Risco e Prevenção a Fraudes</h4>
+                <p>Sistema que avalia, analisa e previne riscos operacionais, fraudes e crédito, através de regras e algoritmos inteligentes.</p>
+                
+                <h5>Funcionalidades:</h5>
+                <ul class="features">
+                    <li>Score de crédito com regras customizadas.</li>
+                    <li>Verificação de identidade e comportamento.</li>
+                    <li>Painel de decisão com trilhas e logs completos.</li>
+                </ul>
+                
+                <div class="examples">
+                    <h5 class="examples-title">Exemplos de aplicação:</h5>
+                    <ul>
+                        <li>Avaliação automática de pedidos de crédito.</li>
+                        <li>Criação de regras de decisão para aprovação ou rejeição automática.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="questions">
+                <h3 class="questions-title">❓ Perguntas:</h3>
+                <ol>
+                    <li>O que é o Rocket e qual seu principal objetivo?</li>
+                    <li>Quais são as funcionalidades do módulo RPA?</li>
+                    <li>Como o Rocket ajuda na prevenção a fraudes?</li>
+                    <li>Dê um exemplo prático de uso do RPA no setor financeiro.</li>
+                    <li>Em que situação o painel de decisão do Rocket pode ser utilizado?</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    
+    <div class="divider"></div>
+    
+    <section class="platform-section">
+        <div class="platform-header">
+            <div class="platform-icon">🔌</div>
+            <h2 class="platform-title">Corner</h2>
+        </div>
+        
+        <div class="platform-content">
+            <div class="what-is">
+                <h3>▶ O que é:</h3>
+                <p>O Corner é um conector universal de pagamentos e integrações bancárias. Ele conecta sua empresa ao ecossistema financeiro, oferecendo suporte a transferências (TED, Pix), boletos, DDA, Open Finance e integrações internacionais como o FedNow.</p>
+            </div>
+            
+            <div class="module">
+                <h4 class="module-title"><span class="module-icon">▪</span> Pix Corner</h4>
+                <ul class="features">
+                    <li>Envia e recebe Pix com alta performance.</li>
+                    <li>Suporte a QR Code dinâmico e estático.</li>
+                    <li>Compatível com Pix Agendado, Pix Saque e Pix Troco.</li>
+                </ul>
+                
+                <div class="examples">
+                    <h5 class="examples-title">Exemplos de aplicação:</h5>
+                    <ul>
+                        <li>Aplicativo de pagamento que precisa gerar e ler QR Codes Pix.</li>
+                        <li>Empresa que deseja automatizar cobrança via Pix com conciliação automática.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="module">
+                <h4 class="module-title"><span class="module-icon">▪</span> NPC - OBE</h4>
+                <ul class="features">
+                    <li>Emissão, registro, baixa e liquidação de boletos bancários.</li>
+                </ul>
+                
+                <div class="examples">
+                    <h5 class="examples-title">Exemplos de aplicação:</h5>
+                    <ul>
+                        <li>Geração de boletos para pagamento de mensalidades.</li>
+                        <li>Leitura diária de boletos pagos para atualizar sistema ERP.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="module">
+                <h4 class="module-title"><span class="module-icon">▪</span> Open Finance Gateway</h4>
+                <ul class="features">
+                    <li>Acesso a dados bancários autorizados pelo usuário final.</li>
+                    <li>Integração com APIs Open Banking.</li>
+                </ul>
+                
+                <div class="examples">
+                    <h5 class="examples-title">Exemplos de aplicação:</h5>
+                    <ul>
+                        <li>Empresa que precisa acessar dados bancários do cliente para analisar crédito.</li>
+                        <li>Integração com agregadores de contas para ver saldos e transações.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="module">
+                <h4 class="module-title"><span class="module-icon">▪</span> ATF (Autorizador de Transferência Financeira) - Antifraude</h4>
+                <ul class="features">
+                    <li>Módulo que orquestra transferências com múltiplas regras de negócio.</li>
+                    <li>Aprovação em múltiplos níveis.</li>
+                    <li>Auditoria e rastreabilidade.</li>
+                </ul>
+                
+                <div class="examples">
+                    <h5 class="examples-title">Exemplos de aplicação:</h5>
+                    <ul>
+                        <li>Empresa que exige autorização de gestores antes de efetuar pagamentos.</li>
+                        <li>Sistema de transferências internas com etapas de validação.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="module">
+                <h4 class="module-title"><span class="module-icon">▪</span> SPB (Sistema de Pagamentos Brasileiro)</h4>
+                <ul class="features">
+                    <li>Envio e recebimento de mensagens do tipo STR e COMPE.</li>
+                    <li>Interface para liquidações bancárias reguladas.</li>
+                    <li>Integrações com instituições homologadas ao Bacen.</li>
+                </ul>
+                
+                <div class="examples">
+                    <h5 class="examples-title">Exemplos de aplicação:</h5>
+                    <ul>
+                        <li>Bancos digitais em fase de homologação junto ao Bacen.</li>
+                        <li>Liquidação de TEDs e compensações diretamente via SPB.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="module">
+                <h4 class="module-title"><span class="module-icon">▪</span> Cross Border (Internacional)</h4>
+                <ul class="features">
+                    <li>Integração Pix com FedNow (EUA).</li>
+                    <li>Câmbio automático.</li>
+                    <li>Verificação de compliance fiscal e regulatório.</li>
+                </ul>
+                
+                <div class="examples">
+                    <h5 class="examples-title">Exemplos de aplicação:</h5>
+                    <ul>
+                        <li>Empresa brasileira que faz pagamento para fornecedores nos EUA.</li>
+                        <li>Plataforma de remessas internacionais com verificação automática.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="questions">
+                <h3 class="questions-title">❓ Perguntas:</h3>
+                <ol>
+                    <li>Quais métodos de pagamento o Corner suporta?</li>
+                    <li>Como o Pix Corner pode ser utilizado em um marketplace?</li>
+                    <li>Qual a função do módulo ATF?</li>
+                    <li>O que o SPB permite fazer que outros módulos não fazem?</li>
+                    <li>Como o Corner pode ajudar uma fintech com Open Finance?</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    
+    <div class="divider"></div>
+    
+    <section class="platform-section">
+        <div class="platform-header">
+            <div class="platform-icon">🚀</div>
+            <h2 class="platform-title">Yellow</h2>
+        </div>
+        
+        <div class="platform-content">
+            <div class="what-is">
+                <h3>▶ O que é:</h3>
+                <p>O Yellow é uma plataforma digital de pagamentos com foco em Pix parcelado e à vista. Ele possibilita que empresas ofereçam aos clientes formas flexíveis de pagamento digital.</p>
+            </div>
+            
+            <div class="module">
+                <h4 class="module-title">🔹 Funcionalidades:</h4>
+                <ul class="features">
+                    <li>Checkout Digital com QR Code Pix: Pagamento rápido e digital.</li>
+                    <li>Parcelamento com recebimento à vista: O cliente parcela e o lojista recebe na hora.</li>
+                    <li>Distribuição de recebíveis: Divide o valor entre múltiplos recebedores automaticamente.</li>
+                </ul>
+                
+                <div class="examples">
+                    <h5 class="examples-title">Exemplos de aplicação:</h5>
+                    <ul>
+                        <li>Loja virtual que oferece Pix parcelado no checkout.</li>
+                        <li>Marketplace que precisa dividir pagamento entre vários parceiros.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="questions">
+                <h3 class="questions-title">❓ Perguntas:</h3>
+                <ol>
+                    <li>Qual a principal vantagem do Yellow?</li>
+                    <li>Como funciona o parcelamento com recebimento à vista?</li>
+                    <li>Como é feita a divisão de valores no modelo de distribuição de recebíveis?</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    
+    <div class="divider"></div>
+    
+    <section class="platform-section">
+        <div class="platform-header">
+            <div class="platform-icon">📊</div>
+            <h2 class="platform-title">Crystal</h2>
+        </div>
+        
+        <div class="platform-content">
+            <div class="what-is">
+                <h3>▶ O que é:</h3>
+                <p>O Crystal é um sistema de core banking robusto e completo. Ideal para empresas que desejam estruturar uma operação financeira desde a criação de contas até o controle de transações e geração de relatórios regulatórios.</p>
+            </div>
+            
+            <div class="module">
+                <h4 class="module-title">🔹 Funcionalidades:</h4>
+                <ul class="features">
+                    <li>Criação e gerenciamento de contas digitais.</li>
+                    <li>Controle de movimentações financeiras.</li>
+                    <li>Geração de relatórios para Bacen e auditorias.</li>
+                </ul>
+                
+                <div class="examples">
+                    <h5 class="examples-title">Exemplos de aplicação:</h5>
+                    <ul>
+                        <li>Fintech que oferece contas digitais a seus clientes.</li>
+                        <li>Cooperativa de crédito que precisa de um core banking próprio.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="questions">
+                <h3 class="questions-title">❓ Perguntas:</h3>
+                <ol>
+                    <li>O que o Crystal oferece em relação ao Bacen?</li>
+                    <li>Quem pode se beneficiar do uso de um core banking?</li>
+                    <li>Quais tipos de movimentações podem ser gerenciados pelo Crystal?</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>C&M Software &copy; 2023 - Todos os direitos reservados</p>
+        <p>Apostila de Treinamento - Versão 1.0</p>
+    </footer>
+</body>
+</html>
